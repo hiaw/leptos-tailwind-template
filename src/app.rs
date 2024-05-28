@@ -1,11 +1,16 @@
 use leptos::*;
 use leptos_meta::*;
+use leptos_router::*;
 
 #[component]
 pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/style/output.css"/>
-        <Home/>
+        <Router>
+            <Routes>
+                <Route path="" view=move || view! { <Home/> }/>
+            </Routes>
+        </Router>
     }
 }
 
