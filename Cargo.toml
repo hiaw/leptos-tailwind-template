@@ -10,3 +10,10 @@ leptos = { version = "0.6.11", features = ["csr", "nightly"] }
 leptos_meta = "0.6.11"
 leptos_router = { version = "0.6.11", features = ["csr"] }
 log = "0.4.21"
+
+[features]
+csr = ["leptos/csr", "leptos_meta/csr", "leptos_router/csr"]
+
+[workspace.metadata.scripts]
+dev = "trunk serve --open"
+tw = "npx tailwindcss -i ./style/tailwind.css -o ./style/output.css --watch"
